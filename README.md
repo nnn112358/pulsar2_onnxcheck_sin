@@ -1,6 +1,9 @@
 # pulsar2_onnxcheck_sin
 
+https://github.com/AXERA-TECH/pulsar2-docs/issues/9
 
+
+## Issue Overview :
 In pulsar2 version 3.3, when target_hardware is AX620E, SIN operator could not be converted.
 It proceeds to generate quant_axmodel.onnx, but fails to generate axmodel.
 
@@ -11,6 +14,7 @@ When target_hardware was AX650,converting the SIN operator passed.
 I hope that target_hardware is AX620E can also convert SIN operators.
 
 
+## reproduction procedure:
 
 ```
 user$ sudo docker run -it --net host -v $PWD:/data pulsar2:3.3
