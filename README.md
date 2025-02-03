@@ -13,12 +13,12 @@ I hope that target_hardware is AX620E can also convert SIN operators.
 
 
 ```
-# sudo docker run -it --net host -v $PWD:/data pulsar2:3.3
-# pulsar2 version
+user$ sudo docker run -it --net host -v $PWD:/data pulsar2:3.3
+root# pulsar2 version
 version: 3.3
 commit: 3cdead5e
 
-# python sin_export_model.py
+root# python sin_export_model.py
 Sin Operation:
 Input shape: (1, 255)
 Output shape: (1, 255)
