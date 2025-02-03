@@ -19,17 +19,7 @@ version: 3.3
 commit: 3cdead5e
 
 root# python sin_export_model.py
-Sin Operation:
-Input shape: (1, 255)
-Output shape: (1, 255)
-Output range: [-1.0000, 0.9999]
-Match: True
-
-Tar file creation complete: input_data.tar
-Temporary files deleted
-
-
-root#  pulsar2 build --config sin_model_AX620E.json
+root# pulsar2 build --config sin_model_AX620E.json
 <frozen quant.ppq.quantization.analyse.graphwise>:110: FutureWarning: Decorating classes is deprecated and will be disabled in future versions. You should only decorate functions or methods. To preserve the current behavior of class decoration, you can directly decorate the `__init__` method and nothing else.
 2025-02-04 00:59:27.455 | WARNING  | yamain.command.build:fill_default:224 - apply default input processor configuration to ['x']
 2025-02-04 00:59:27.456 | WARNING  | yamain.command.build:fill_default:260 - apply default output processor configuration to ['z']
