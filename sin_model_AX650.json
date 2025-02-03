@@ -1,0 +1,44 @@
+{
+  "model_type": "ONNX",                         // 入力モデルフォーマットの指定
+  "npu_mode": "NPU1",                          // Neural Processing Unitの動作モード
+  "target_hardware": "AX650",                 // ターゲットハードウェア
+  "input": "sin_model.onnx",            // 入力ONNXモデル
+  "output_dir": "sin_model_AX650",        // 出力ディレクトリ
+  "output_name": "sin_model.axmodel",   // 出力ファイル名
+  
+  "onnx_opt": {
+    "enable_onnxsim": true,                   // ONNXモデルの簡略化を有効化
+    "model_check": true                       // モデルの整合性チェックを有効化
+  },
+  
+  "quant": {
+    "input_configs": [
+      {
+        "tensor_name": "x",           // [1×255]の状態ベクトル
+        "calibration_dataset": "input_data.tar",
+        "calibration_size": -1,
+        "calibration_format": "Numpy"
+      }
+    ],
+    "layer_configs": [
+      {
+        "start_tensor_names": ["DEFAULT"],      // その他の演算の設定
+        "end_tensor_names": ["DEFAULT"],
+        "data_type": "U8"                     // 8ビット符号なし整数で量子化
+      }
+    ],
+    "calibration_method": "MinMax",           // 量子化のキャリブレーション方式
+    "precision_analysis": false,               // 量子化精度の分析を有効化
+    "precision_analysis_method": "EndToEnd"   // モデル全体での精度評価
+  },
+  
+  "input_processors": [
+    {
+      "tensor_name": "DEFAULT"                    // 全ての入力テンソルに対して前処理を適用
+    }
+  ],
+  
+  "compiler": {
+    "check": 0                               // コンパイル時の精度チェックレベル
+  }
+}
