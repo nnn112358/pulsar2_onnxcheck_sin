@@ -13,6 +13,7 @@ I hope that target_hardware is AX620E can also convert SIN operators.
 
 
 ```
+# sudo docker run -it --net host -v $PWD:/data pulsar2:3.3
 # pulsar2 version
 version: 3.3
 commit: 3cdead5e
