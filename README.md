@@ -1,4 +1,5 @@
 # pulsar2_onnxcheck_sin
+![image](https://github.com/user-attachments/assets/ebc6a785-1e4f-4da6-9f25-37cb284d0122)
 
 https://github.com/AXERA-TECH/pulsar2-docs/issues/9
 
